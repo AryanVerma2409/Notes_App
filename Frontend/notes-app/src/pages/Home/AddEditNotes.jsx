@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TagInput from "../../components/Input/TagInput";
-import { MdClose } from "react-icons/md";
+import { MdCancel, MdClose } from "react-icons/md";
 
 
 const AddEditNotes  =({noteData,type,onClose}) => {
@@ -17,31 +17,33 @@ const AddEditNotes  =({noteData,type,onClose}) => {
   
   const handleAddNote=()=>{
     if (!title) {
-       setError("Please enter the title ");
+       setError(" Title to Likho Yarr ");
+       return;
     }
-    if 
-    (!content){
-      setError("Please enter the content");
+    if (!content){
+      setError(" Ab kya Content ke liye bhi mein btau....");
       return;
     }
     setError("");
   
   
   if(type=== 'edit'){
-    MdEditNote()
+    editNote()
   }else {
     addNewNote()
   }
 };
   return (
+    
   <div className="relative">
     <button
-    className="w-10 h-10 rounded-full flex items-center justify-center absolute -top-3 -right-3 hover:bg-slate-50"
-    onClick={onclose}>
-      <MdClose className="text-xl text-slate-400" />
+    className="w-10 h-10 rounded-full flex items-center justify-center absolute -top-3 -right-4 hover:bg-slate-50"
+    onClick={onClose}>
+      <MdCancel className="text-xl text-slate-400" />
     </button>
+
   <div className="flex flex-col gap-2">
-    <kabel className="input-label">TITLE</kabel>
+    <label className="input-label">TITLE</label>
     <input
     type="text"
     className="text-2xl text-slate-950 outline-none"
@@ -72,8 +74,8 @@ const AddEditNotes  =({noteData,type,onClose}) => {
   </div>
 
   {error && <p className="text-red-500 text-x5 pt-4">{error}</p>}
-  <button className="btn-primary font-medium mt-5 p-3" onClick={handleAddNote}> ADD 
-
+  <button className="btn-primary font-medium mt-5 p-3" onClick={handleAddNote}> 
+    ADD 
   </button>
 
   </div>

@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import NoteCard from "../../components/Cards/NoteCard";
 import { MdAdd } from "react-icons/md";
 import Modal from  "react-modal";
+import AddEditNotes from "./AddEditNotes";
 const Home = () => {
    
    const [openAddEditModal, setOpenAddEditModal]=useState({
@@ -52,7 +53,7 @@ const Home = () => {
             onClose={() => {
             setOpenAddEditModal({isShown: false, type:"add", data:null});
         }}
-        />
+        /> 
         </Modal>
        </>
     );
